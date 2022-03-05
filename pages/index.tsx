@@ -46,8 +46,8 @@ export default function Index({designers}){
                 src={designer.name + '.jpg'}
                 />
               <div className="cover">
-                <h1>DESIGN YOUR SHOES</h1>
-                <div>언제 어디서나 편한 실용적인</div>
+                <h1>{designer.slogan}</h1>
+                <div>{designer.coment}</div>
               </div>
             </motion.div>
             </Link>
@@ -67,8 +67,8 @@ export default function Index({designers}){
                 src={designer.name + '.jpg'}
                 />
               <div className="cover">
-                <h1>BEAUTY</h1>
-                <div>아름답고 아름답다.</div>
+                <h1>{designer.slogan}</h1>
+                <div>{designer.coment}</div>
               </div>
             </motion.div>
             </Link>
