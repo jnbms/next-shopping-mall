@@ -12,7 +12,7 @@ import DynamicImage from "../components/dynamicImage";
 
 export async function getServerSideProps(context) {
   const designers = await axios.get(process.env.BACKEND_URL + '/designer/')
-  .then(result => result.data)
+    .then(result => result.data)
   
   return {
     props: {
@@ -22,7 +22,6 @@ export async function getServerSideProps(context) {
 }
 
 export default function Index({designers}){
-  
   const odd = designers.filter(disigner => disigner.id % 2 == 1)
   const even = designers.filter(disigner => disigner.id % 2 == 0)
   return(

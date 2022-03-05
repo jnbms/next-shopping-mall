@@ -107,7 +107,8 @@ function Product({shoes}) {
             onClick={() => selectedQuantity != 1 ? setSelectedQuantity(selectedQuantity - 1): ""}>
             <Icon icon="clarity:minus-line"/>
           </motion.div>
-          <Input className="input" value={selectedQuantity}/>
+          {/* onchange 가 없는 경우 warning이 떠서 넣었음 */}
+          <Input className="input" onChange={()=>{}} value={selectedQuantity}/>
           <motion.div className="button" whileTap={{scale: 0.9}}
             onClick={() => setSelectedQuantity(selectedQuantity + 1)}>
             <Icon icon="clarity:plus-line"/>
