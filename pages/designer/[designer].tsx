@@ -78,7 +78,7 @@ export default function DesignerInfo(props) {
                                             <Image
                                                 className="image"
                                                 loader={() => process.env.BACKEND_URL + '/shoes/image/' + shoe.name}
-                                                src={shoe.name + '.jpg'}
+                                                src={shoe.name}
                                                 alt={shoe.name}
                                                 // layout="fill"
                                                 width="100%"

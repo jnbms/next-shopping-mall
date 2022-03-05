@@ -11,6 +11,6 @@ module.exports = {
     ]
   },
   env: {
-    BACKEND_URL: "https://shoedb123.herokuapp.com"
+    BACKEND_URL: "https://shoedb123.herokuapp.com/"
   }
 }
