@@ -15,7 +15,7 @@ export default function Login() {
         async function send() {
             var randomNumber = Math.floor(Math.random() *(8999)) + 1000;
             setCertificationNumber(randomNumber); // 1000 ~ 9999
-            await axios.post(`/api/certification?email=${email}&number=${randomNumber}`)
+            await axios.post(process.env.BACKEND_URL + `/certification?email=${email}&number=${randomNumber}`)
             .then(() => alert('인증번호가 전송되었습니다.'))
         }
 

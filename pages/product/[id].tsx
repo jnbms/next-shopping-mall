@@ -52,7 +52,7 @@ function Product({shoes}) {
         onClick={() => window.history.back()}
         />
         <motion.div animate={{opacity: [0,1]}} className="cover-text">
-          <H1>Common Project</H1>
+          {/* <H1>Common Project</H1> */}
           <H2>{name}</H2>
         </motion.div>
       </motion.div>

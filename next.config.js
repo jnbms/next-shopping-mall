@@ -5,7 +5,7 @@ module.exports = {
   // async rewrites() {
   //   return [
   //     {
-  //       source: process.env.SOURCE_PA`TH,
+  //       source: process.env.SOURCE_PATH,
   //       destination: process.env.DESTINATION_URL
   //     },
   //   ]
