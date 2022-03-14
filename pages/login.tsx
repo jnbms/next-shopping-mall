@@ -20,7 +20,7 @@ export default function Login() {
             alert('회원 정보를 모두 입력하지 않았습니다.')
         } else {
             axios
-            .get(`/api/users/check?id=${id}&pw=${password}`)
+            .get(process.env.BACKEND_URL + `/users/check?id=${id}&pw=${password}`)
             .then(result => {
                 if(result.data){
                     var {id, username} = result.data

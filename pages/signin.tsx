@@ -29,7 +29,7 @@ export default function Login() {
             } else {
                 alerts[1].innerText = ""
                 if(confirm('가입하시겠습니까?')){
-                    axios.post(`/api/users?id=${email}&pw=${pass[0].value}&username=${username.value}`)
+                    axios.post(process.env.BACKEND_URL + `/users?id=${email}&pw=${pass[0].value}&username=${username.value}`)
                     .then(result => {
                         if(result) {
                             alert('회원가입이 완료되었습니다.')
