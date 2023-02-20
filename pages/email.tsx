@@ -9,16 +9,20 @@ import Router from 'next/router';
 
 export default function Login() {
 
-    const [certificationNumber, setCertificationNumber] = useState(0);
+    // 인증 메일 전송 관련 기능, useState의 사용은 없도록 하는 것이 좋은 것 같다. 단일 기능 구현한 훅이 좋아 보인다.
+    const [certificationNumber, setCertificationNumber] = useState(0); 
+
+
     const sendCertification = () => {
+        // 엘리먼트 아이디로 접근하는 방식보다 useInput을 적용하면 깔끔할 것 같다.
         var email = (document.getElementById('email') as HTMLInputElement).value;
         async function send() {
+            // 예제를 들기 위한 랜덤 번호 전송
             var randomNumber = Math.floor(Math.random() *(8999)) + 1000;
             setCertificationNumber(randomNumber); // 1000 ~ 9999
             return await axios.post(process.env.BACKEND_URL + `/certification?email=${email}&number=${randomNumber}`)
             .then(() => alert('인증번호가 전송되었습니다.'))
         }
-
         if(email.length == 0) {
             alert('이메일을 입력해주세요.')
         } else if(certificationNumber != 0) {
@@ -29,6 +33,7 @@ export default function Login() {
             send()
         }
     }
+
     const matchCertification = () => {
         var email = (document.getElementById('email') as HTMLInputElement).value;
         var password = Number((document.getElementById('password') as HTMLInputElement).value);
@@ -45,7 +50,7 @@ export default function Login() {
             alert('인증번호가 일치하지 않습니다.')
         }
     }
-
+    // 스타일 태그로 감싸는 것이 적절한 방법으로 보이지는 않는다. 
     return (
     <Style>
             <Link href="/" passHref>

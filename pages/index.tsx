@@ -22,6 +22,7 @@ export async function getServerSideProps(context) {
 }
 
 export default function Index({designers}){
+  // 칼럼을 2 분할로 나누기 위해서 작성됬음을 알 수 있다.
   const odd = designers.filter(disigner => disigner.id % 2 == 1)
   const even = designers.filter(disigner => disigner.id % 2 == 0)
   return(
